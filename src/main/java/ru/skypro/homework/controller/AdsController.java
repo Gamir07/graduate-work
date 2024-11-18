@@ -7,7 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 import ru.skypro.homework.dto.Ad;
 import ru.skypro.homework.dto.Ads;
 import ru.skypro.homework.dto.CreateOrUpdateAd;
-import ru.skypro.homework.dto.ExtendedAt;
+import ru.skypro.homework.dto.ExtendedAd;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public class AdsController {
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<?> getAds(@PathVariable int id) {
-        return ResponseEntity.ok(new ExtendedAt());
+        return ResponseEntity.ok(new ExtendedAd());
     }
 
     @DeleteMapping(value = "/{id}")
