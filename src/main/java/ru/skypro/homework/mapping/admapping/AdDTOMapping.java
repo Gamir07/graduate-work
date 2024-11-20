@@ -2,22 +2,26 @@ package ru.skypro.homework.mapping.admapping;
 
 import ru.skypro.homework.dto.Ad;
 import ru.skypro.homework.model.AdEntity;
+import ru.skypro.homework.model.AdImageEntity;
+import ru.skypro.homework.model.UserEntity;
 
 public class AdDTOMapping {
     public static Ad mapAdEntityToAd(AdEntity adEntity) {
         Ad adDTO = new Ad();
         adDTO.setAuthor(adEntity.getUser().getId());
-        adDTO.setImage(adEntity.getImage());
+        adDTO.setImage(adEntity.getImage().getFilePath());
         adDTO.setPk(adEntity.getId());
         adDTO.setPrice(adEntity.getPrice());
         adDTO.setTitle(adEntity.getTitle());
         return adDTO;
     }
 
-    public static AdEntity mapAdToAdEntity(Ad adDTO) {
+    public static AdEntity mapAdToAdEntity(Ad adDTO, UserEntity userEntity) {
         AdEntity adEntity = new AdEntity();
-        // todo я так понял тут не надо сетить поле author. Он сам засетится
-        adEntity.setImage(adDTO.getImage());
+        AdImageEntity image = new AdImageEntity();
+        image.setFilePath(adDTO.getImage());
+        adEntity.setUser(userEntity);
+        adEntity.setImage(image);
         adEntity.setId(adDTO.getPk());
         adEntity.setPrice(adDTO.getPrice());
         adEntity.setTitle(adDTO.getTitle());

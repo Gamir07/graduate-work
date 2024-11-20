@@ -12,8 +12,7 @@ public class CreateOrUpdateAdMapping {
         return createOrUpdateAd;
     }
 
-    public static AdEntity mapCreateOrUpdateAdToAdEntity(CreateOrUpdateAd createOrUpdateAd) {
-        AdEntity adEntity = new AdEntity();
+    public static AdEntity mapCreateOrUpdateAdToAdEntity(CreateOrUpdateAd createOrUpdateAd, AdEntity adEntity) {
         adEntity.setTitle(createOrUpdateAd.getTitle());
         adEntity.setPrice(createOrUpdateAd.getPrice());
         adEntity.setDescription(createOrUpdateAd.getDescription());

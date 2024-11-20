@@ -9,7 +9,7 @@ public class CommentDTOMapping {
     public static Comment mapCommentEntityToComment(CommentEntity commentEntity) {
         Comment commentDTO = new Comment();
         commentDTO.setAuthor(commentEntity.getUser().getId());
-        commentDTO.setAuthorImage(commentEntity.getUser().getImage());
+        commentDTO.setAuthorImage(commentEntity.getUser().getImage().getFilePath());
         commentDTO.setAuthorFirstName(commentEntity.getUser().getFirstName());
         commentDTO.setCreatedAt(commentEntity.getCreatedAt());
         commentDTO.setPk(commentEntity.getId());
@@ -17,5 +17,4 @@ public class CommentDTOMapping {
         return commentDTO;
     }
 
-   //todo не вижу смысла делать обратный маппинг
 }

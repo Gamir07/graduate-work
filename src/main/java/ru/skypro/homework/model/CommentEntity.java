@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Entity
@@ -19,6 +20,7 @@ public class CommentEntity {
     @Column(name = "created_At")
     private LocalDateTime createdAt;
     @Column(name = "text")
+    @Size(min = 8, max = 64)
     private String text;
     @ManyToOne
     @JoinColumn(name = "id", insertable = false, updatable = false)

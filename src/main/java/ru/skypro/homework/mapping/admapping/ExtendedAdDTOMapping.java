@@ -17,6 +17,5 @@ public class ExtendedAdDTOMapping {
         extendedAdDTO.setTitle(adEntity.getTitle());
         return extendedAdDTO;
     }
-//todo тут вроде обратного маппинга не требуется, поэтому не стал делать
 
 }

@@ -5,7 +5,7 @@
 CREATE TABLE comment
 (
   id INTEGER PRIMARY KEY,
-  created_At TIMESTAMP,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   text TEXT,
   ad_id INTEGER,
   user_id INTEGER,
