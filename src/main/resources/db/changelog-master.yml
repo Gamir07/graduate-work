@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/create_userEntity.sql
+  - include:
+      file: db/changelog/create_adEntity.sql
+  - include:
+      file: db/changelog/create_commentEntity.sql
